@@ -15,13 +15,20 @@
             align-items: center;
             min-height: 100vh;
             font-family: 'Roboto', sans-serif;
-            transition: background-color 1s ease-in-out; 
-            overflow: hidden; 
+            transition: background-color 1s ease-in-out;
+            overflow: hidden;
         }
-        .emoji-container {
-            font-size: 8.08em;
+        .image-container {
             opacity: 1;
-            transition: opacity 1s ease-in-out; 
+            transition: opacity 1s ease-in-out;
+            display: flex;
+            justify-content: center; 
+            align-items: center; 
+        }
+        .image-container img {
+            width: 50%; 
+            height: auto; 
+            display: block; 
         }
         .video-wrapper {
             position: absolute;
@@ -35,7 +42,7 @@
             opacity: 0;
             transition: opacity 1s ease-in-out;
         }
-        #player {
+        .video-player {
             width: 100%;
             max-width: 960px;
             aspect-ratio: 16/9;
@@ -44,32 +51,33 @@
             box-shadow: none;
         }
         @media (max-width: 768px) {
-            #player {
+            .video-player {
                 padding: 15px;
             }
         }
         @media (max-width: 480px) {
-            #player {
+            .video-player {
                 padding: 10px;
             }
-            .emoji-container {
-            font-size: 4.04em;
+            .image-container img {
+                width: 70%; 
             }
         }
     </style>
 </head>
 <body>
-    <div class="emoji-container">🦅💨</div>
+    <div class="image-container">
+        <img src="https://github.com/ta222222/sjv3/raw/cc19bc0cf41af03495e54c66053ba5ba73003818/sj%20viral%20montreal.jpg" alt="Steven Julien">
+    </div>
     <div class="video-wrapper" id="videoWrapper">
-        <div id="player"></div>
+        <div id="player" class="video-player"></div>
     </div>
     <script>
         const body = document.body;
-        const emojiContainer = document.querySelector('.emoji-container');
+        const imageContainer = document.querySelector('.image-container');
         const videoWrapper = document.getElementById('videoWrapper');
         let player;
 
-      
         function initializePlayer() {
             const tag = document.createElement('script');
             tag.src = "https://www.youtube.com/iframe_api"; 
@@ -77,42 +85,37 @@
             firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
         }
 
- 
         function onYouTubeIframeAPIReady() {
             player = new YT.Player('player', {
                 height: '100%',
                 width: '100%',
-                videoId: '-R38JqMHK8A', 
+                videoId: '-R38JqMHK8A',
                 playerVars: {
-                    'autoplay': 1, 
-                    'controls': 1, 
+                    'autoplay': 1,
+                    'controls': 1,
                     'modestbranding': 1,
                     'rel': 0,
                     'showinfo': 0,
-                    'disablekb': 0, 
+                    'disablekb': 0,
                     'iv_load_policy': 3
                 }
             });
         }
 
-        
         setTimeout(() => {
-           
-            body.style.backgroundColor = 'black'; 
-            emojiContainer.style.opacity = '1';
-        }, 100); 
+            body.style.backgroundColor = 'black';
+            imageContainer.style.opacity = '1';
+        }, 100);
 
         setTimeout(() => {
-        
-            emojiContainer.style.opacity = '0';
-        }, 2000); 
+            imageContainer.style.opacity = '0';
+        }, 2000);
 
         setTimeout(() => {
-        
             body.style.backgroundColor = 'red';
             videoWrapper.style.opacity = '1';
-            initializePlayer(); 
-        }, 3000); 
+            initializePlayer();
+        }, 3000);
     </script>
 </body>
 </html>
