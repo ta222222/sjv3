@@ -34,6 +34,10 @@
 
         setTimeout(() => {
             imageContainer.style.opacity = '0';
+            setTimeout(() => {
+                    imageContainer.style.display = 'none';
+                    videoWrapper.style.display = 'flex';
+            }, 1000);
         }, 3000);
 
         setTimeout(() => {
