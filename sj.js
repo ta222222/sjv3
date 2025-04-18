@@ -22,10 +22,13 @@ function onYouTubeIframeAPIReady() {
             'rel': 0,
             'showinfo': 0,
             'disablekb': 0,
-            'iv_load_policy': 3
+            'iv_load_policy': 3,
+            'mute': 1
         }
     });
 }
+
+window.onYouTubeIframeAPIReady = onYouTubeIframeAPIReady;
 
 setTimeout(() => {
     body.style.backgroundColor = 'black';
