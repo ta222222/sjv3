@@ -19,6 +19,14 @@
 			height: auto;
 		}
 
+/* Desktop — shrink the image */
+@media (min-width: 1024px) {
+    .header-img {
+        transform: scale(0.7);
+        transform-origin: top left;
+    }
+}
+
 
 		@font-face {
     font-family: "Futura Condensed Extra Bold";
@@ -53,7 +61,7 @@
 		<p id="artistName">STEVEN JULIEN</p></div>
 			<br><br>
 
-        <img src="sj site placeholder.jpg" alt="header image"><br><br>
+        <img src="sj site placeholder.jpg" class="header-img" alt="header image"><br><br>
 
 <div class="streamlinks">
         <a href="https://stevenjulien.bandcamp.com/music">Bandcamp |</a>
