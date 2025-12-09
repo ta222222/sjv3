@@ -20,12 +20,14 @@
 			height: auto;
 		}
 
-
-		/* Desktop: smaller width */
-@media (min-width: 1024px) {
-    .header-img {
-        width: 50%;   /* choose any size */
-    }
+		@font-face {
+    font-family: "Helvetica Condensed Light";
+    src: url("https://db.onlinewebfonts.com/t/8d8ceb7386bcccdf5dc13b3f223d20b2.eot");
+    src: url("https://db.onlinewebfonts.com/t/8d8ceb7386bcccdf5dc13b3f223d20b2.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/8d8ceb7386bcccdf5dc13b3f223d20b2.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/8d8ceb7386bcccdf5dc13b3f223d20b2.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/8d8ceb7386bcccdf5dc13b3f223d20b2.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/8d8ceb7386bcccdf5dc13b3f223d20b2.svg#Helvetica Condensed Light")format("svg");
 }
 
 		@font-face {
@@ -50,7 +52,13 @@
     .discography {
         text-transform: uppercase;
     }
-	
+
+				/* Desktop: smaller width */
+@media (min-width: 1024px) {
+    .header-img {
+        width: 50%;   /* choose any size */
+    }
+}
 
 	</style>
 	</head>
