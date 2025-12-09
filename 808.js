@@ -8,4 +8,4 @@
             artistNameElement.textContent = 'STEVEN JULIEN';
         }
         isStevenJulien = !isStevenJulien;
-    }, 1500);
+    }, 1750);
