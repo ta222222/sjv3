@@ -20,6 +20,7 @@
     img {
         width: 70%;
         height: auto;
+        transition: transform 0.3s ease; /* smooth scaling */
     }
 
     @font-face {
@@ -44,6 +45,10 @@
     @media (min-width: 780px) {
         body { font-size: 1.25rem; line-height: 1.75rem; }
         .headertext { font-size: 5rem; line-height: 1rem; }
+        .header-img {
+            transform: scale(0.75); /* dynamically reduce to 75% of current size */
+            transform-origin: top center; /* keeps scaling centered horizontally */
+        }
     }
 
     .grid {
@@ -59,7 +64,7 @@
         position: relative;
         cursor: pointer;
         width: 100%;
-        aspect-ratio: 16 / 9; /* enforce 16:9 */
+        aspect-ratio: 16 / 9;
         background: #000;
     }
 
@@ -87,7 +92,7 @@
         }
 
         .thumb {
-            width: 100%; /* full width on mobile */
+            width: 100%;
             margin: 0 auto;
         }
     }
