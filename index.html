@@ -53,14 +53,18 @@
         text-transform: uppercase;
     }
 
+		/* Desktop: increase header text */
+@media (min-width: 1024px) {
+    .headertext, #artistName {
+        font-size: 3rem !important; 
+    }
+}
+
 				/* Desktop: smaller width */
 @media (min-width: 1024px) {
     .header-img {
         width: 50%;
 	}
-		   .headertext {
-        font-size: 3rem;
-    }
 }
 
 @media (min-width: 780px) {
