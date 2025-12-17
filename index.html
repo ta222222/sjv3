@@ -107,7 +107,7 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 16px;
   padding: 16px;
-  max-width: 1200px;
+  max-width: 800px;
   margin: auto;
 }
 
@@ -115,7 +115,7 @@
   position: relative;
   cursor: pointer;
   aspect-ratio: 16 / 9;
-  background: #111;
+  background: #000000;
 }
 
 .thumb img {
@@ -229,7 +229,7 @@ function onYouTubeIframeAPIReady() {
 
     // Set smaller size: aspect-ratio handled by CSS
     div.style.height = "280px"; // smaller than original
-    div.style.width = "50%";
+    div.style.width = "100%";
 
     div.id = `player-${index}`;
     grid.appendChild(div);
