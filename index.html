@@ -2,217 +2,191 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="title" content="steven julien">
-    <meta property="og:title" content="stevenjulien.com">
-    <title>steven julien</title>
-    <style>
-        body {
-            font-family: 'Helvetica Light', sans-serif;
-            background-color: #000;
-            font-size: 0.75rem;
-            line-height: 1rem;
-            color: #fff;
-            text-align: center;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="title" content="steven julien">
+<meta property="og:title" content="stevenjulien.com">
+<title>steven julien</title>
+<style>
+    body {
+        font-family: 'Helvetica Light', sans-serif;
+        background-color: #000;
+        font-size: 0.75rem;
+        line-height: 1rem;
+        color: #fff;
+        text-align: center;
+    }
 
-        img {
-            width: 70%;
-            height: auto;
-        }
+    img {
+        width: 70%;
+        height: auto;
+    }
 
-        @font-face {
-            font-family: "Futura Condensed Extra Bold";
-            src: url("https://db.onlinewebfonts.com/t/35e76f5f0525b62c69ebade19a3ee8f4.eot");
-            src: url("https://db.onlinewebfonts.com/t/35e76f5f0525b62c69ebade19a3ee8f4.eot?#iefix") format("embedded-opentype"),
-                 url("https://db.onlinewebfonts.com/t/35e76f5f0525b62c69ebade19a3ee8f4.woff2") format("woff2"),
-                 url("https://db.onlinewebfonts.com/t/35e76f5f0525b62c69ebade19a3ee8f4.woff") format("woff"),
-                 url("https://db.onlinewebfonts.com/t/35e76f5f0525b62c69ebade19a3ee8f4.ttf") format("truetype"),
-                 url("https://db.onlinewebfonts.com/t/35e76f5f0525b62c69ebade19a3ee8f4.svg#Futura Condensed Extra Bold") format("svg");
-        }
+    @font-face {
+        font-family: "Futura Condensed Extra Bold";
+        src: url("https://db.onlinewebfonts.com/t/35e76f5f0525b62c69ebade19a3ee8f4.eot");
+        src: url("https://db.onlinewebfonts.com/t/35e76f5f0525b62c69ebade19a3ee8f4.eot?#iefix") format("embedded-opentype"),
+             url("https://db.onlinewebfonts.com/t/35e76f5f0525b62c69ebade19a3ee8f4.woff2") format("woff2"),
+             url("https://db.onlinewebfonts.com/t/35e76f5f0525b62c69ebade19a3ee8f4.woff") format("woff"),
+             url("https://db.onlinewebfonts.com/t/35e76f5f0525b62c69ebade19a3ee8f4.ttf") format("truetype"),
+             url("https://db.onlinewebfonts.com/t/35e76f5f0525b62c69ebade19a3ee8f4.svg#Futura Condensed Extra Bold") format("svg");
+    }
 
-        a {
-            color: #fff;
-            text-decoration: none;
-        }
+    a { color: #fff; text-decoration: none; }
 
-        .headertext {
-            font-family: "Futura Condensed Extra Bold", Arial, sans-serif;
-            font-size: 3rem;
-        }
+    .headertext {
+        font-family: "Futura Condensed Extra Bold", Arial, sans-serif;
+        font-size: 3rem;
+    }
 
-        .discography {
-            text-transform: uppercase;
-        }
+    .discography { text-transform: uppercase; }
 
-        @media (min-width: 780px) {
-            body {
-                font-size: 1.25rem;
-                line-height: 1.75rem;
-            }
+    @media (min-width: 780px) {
+        body { font-size: 1.25rem; line-height: 1.75rem; }
+        .headertext { font-size: 5rem; line-height: 1rem; }
+    }
 
-            .headertext {
-                font-size: 5rem;
-                line-height: 1rem;
-            }
-        }
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+        padding: 16px;
+        max-width: 960px;
+        margin: auto;
+    }
 
-        #player {
-            width: 100%;
-            max-width: 960px;
-            aspect-ratio: 16 / 9;
-            margin: 20px auto;
-        }
+    .thumb {
+        position: relative;
+        cursor: pointer;
+        width: 100%;
+        aspect-ratio: 16 / 9; /* enforce 16:9 */
+        background: #000;
+    }
 
+    .thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .thumb::after {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 60px;
+        background: rgba(0,0,0,.4);
+    }
+
+    /* Mobile adjustments */
+    @media (max-width: 768px) {
         .grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 16px;
-            padding: 16px;
-            max-width: 850px;
-            margin: auto;
+            grid-template-columns: 1fr;
+            gap: 36px;
         }
 
         .thumb {
-            position: relative;
-            cursor: pointer;
-            aspect-ratio: 16 / 9;
-            background: #000;
-            width: 100%;
+            width: 100%; /* full width on mobile */
+            margin: 0 auto;
         }
-
-        .thumb img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .thumb::after {
-            position: absolute;
-            inset: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 60px;
-            background: rgba(0,0,0,.4);
-        }
-
-        /* Mobile adjustments */
-        @media (max-width: 768px) {
-            .grid {
-                grid-template-columns: 1fr;
-                gap: 36px; /* more spacing between videos */
-            }
-
-            .thumb {
-                width: 100%; 
-                margin: 0 auto; /* center on mobile */
-            }
-        }
-    </style>
+    }
+</style>
 </head>
 <body>
-    <br><br>
-    <div class="headertext">
-        <p id="artistName">STEVEN JULIEN</p>
-    </div>
-    <br>
-    <img src="IMG_888.jpg" class="header-img" alt="header image"><br><br><br>
 
-    <div class="discography">
-        <a href="https://stevenjulien.bandcamp.com/album/time-ep" target="_blank">TIME EP</a><br>
-        <a href="https://stevenjulien.bandcamp.com/album/wraapt" target="_blank">WRAAP'T</a><br>
-        <a href="https://stevenjulien.bandcamp.com/album/crown" target="_blank">CROWN</a><br>
-        <a href="https://stevenjulien.bandcamp.com/album/g-out" target="_blank">G-OUT</a><br>
-        <a href="https://stevenjulien.bandcamp.com/album/8-ball" target="_blank">8 BALL</a><br>
-        <a href="https://stevenjulien.bandcamp.com/album/bloodline" target="_blank">BLOODLINE</a><br>
-        <a href="https://stevenjulien.bandcamp.com/album/fallen" target="_blank">FALLEN</a><br>
-        <a href="https://stevenjulien.bandcamp.com/album/a16" target="_blank">A16</a><br>
-        <a href="https://stevenjulien.bandcamp.com/album/discipline-abyss" target="_blank">DISCIPLINE / ABYSS</a><br>
-        <a href="https://stevenjulien.bandcamp.com/album/st-julien" target="_blank">ST. JULIEN</a><br>
-        <a href="https://stevenjulien.bandcamp.com/album/dreams-of-coke" target="_blank">DREAMS OF COKE</a><br>
-        <a href="https://stevenjulien.bandcamp.com/album/cha-dracula" target="_blank">CHA / DRACULA</a><br>
-        <a href="https://soundcloud.com/platform/b-funkineven-sweets-1">CHIPS & SWEETS</a><br>
-        <a href="https://stevenjulien.bandcamp.com/album/apron-ep" target="_blank">APRON EP</a><br><br>
-    </div>
+<div class="headertext">
+    <p id="artistName">STEVEN JULIEN</p>
+</div>
+<br>
+<img src="IMG_888.jpg" class="header-img" alt="header image"><br><br><br>
 
-    <div class="streamlinks">
-        <b>
-            <a href="https://stevenjulien.bandcamp.com/music" target="_blank">Bandcamp |</a>
-            <a href="https://music.apple.com/ca/artist/steven-julien/1125509732" target="_blank">Apple Music |</a>
-            <a href="https://open.spotify.com/artist/37pVxtkN0BLmY6QOliGkJK" target="_blank">Spotify</a>
-        </b>
-    </div>
-    <br><br>
+<div class="discography">
+    <a href="https://stevenjulien.bandcamp.com/album/time-ep" target="_blank">TIME EP</a><br>
+    <a href="https://stevenjulien.bandcamp.com/album/wraapt" target="_blank">WRAAP'T</a><br>
+    <a href="https://stevenjulien.bandcamp.com/album/crown" target="_blank">CROWN</a><br>
+    <a href="https://stevenjulien.bandcamp.com/album/g-out" target="_blank">G-OUT</a><br>
+    <a href="https://stevenjulien.bandcamp.com/album/8-ball" target="_blank">8 BALL</a><br>
+    <a href="https://stevenjulien.bandcamp.com/album/bloodline" target="_blank">BLOODLINE</a><br>
+    <a href="https://stevenjulien.bandcamp.com/album/fallen" target="_blank">FALLEN</a><br>
+    <a href="https://stevenjulien.bandcamp.com/album/a16" target="_blank">A16</a><br>
+    <a href="https://stevenjulien.bandcamp.com/album/discipline-abyss" target="_blank">DISCIPLINE / ABYSS</a><br>
+    <a href="https://stevenjulien.bandcamp.com/album/st-julien" target="_blank">ST. JULIEN</a><br>
+    <a href="https://stevenjulien.bandcamp.com/album/dreams-of-coke" target="_blank">DREAMS OF COKE</a><br>
+    <a href="https://stevenjulien.bandcamp.com/album/cha-dracula" target="_blank">CHA / DRACULA</a><br>
+    <a href="https://soundcloud.com/platform/b-funkineven-sweets-1">CHIPS & SWEETS</a><br>
+    <a href="https://stevenjulien.bandcamp.com/album/apron-ep" target="_blank">APRON EP</a><br><br>
+</div>
 
-    <div class="dates">
-        <u>UPCOMING DATES</u><br><br>
-        <s>13/12/25: Radio Radio, Amsterdam</s><br>
-        27/12/25: Modular, Fontanafredda Italy<br>
-        31/12/25: Jumbi Peckham, London<br>
-    </div>
-    <br>
-    <p><a href="mailto:tal@klsbookings.com">→ <b>Bookings</b> ←</a></p>
-    <br>
+<div class="streamlinks">
+    <b>
+        <a href="https://stevenjulien.bandcamp.com/music" target="_blank">Bandcamp |</a>
+        <a href="https://music.apple.com/ca/artist/steven-julien/1125509732" target="_blank">Apple Music |</a>
+        <a href="https://open.spotify.com/artist/37pVxtkN0BLmY6QOliGkJK" target="_blank">Spotify</a>
+    </b>
+</div>
+<br><br>
 
-    <div class="grid" id="grid"></div>
+<div class="dates">
+    <u>UPCOMING DATES</u><br><br>
+    <s>13/12/25: Radio Radio, Amsterdam</s><br>
+    27/12/25: Modular, Fontanafredda Italy<br>
+    31/12/25: Jumbi Peckham, London<br>
+</div>
+<br>
+<p><a href="mailto:tal@klsbookings.com">→ <b>Bookings</b> ←</a></p>
+<br>
 
-    <script src="https://www.youtube.com/iframe_api"></script>
-    <script>
-        const videos = [
-            "-R38JqMHK8A","A9Uz8VprEHg","1bFO1AvankQ","lILV7h_y1lA",
-            "9uncX_G-8PY","k2UQZpPoZz8","EdCe2U_Hp4k","MS-9mioT0w8","2O61m_nBdlU","YBIZBwLoG2g",
-            "jUs1mwoZ-UA","fjqyKXOf3WA","RS7ne_vp-lw","c3tU5WtiDH0"
-        ];
+<div class="grid" id="grid"></div>
 
-        const grid = document.getElementById("grid");
-        const players = [];
+<script src="https://www.youtube.com/iframe_api"></script>
+<script>
+const videos = [
+    "-R38JqMHK8A","A9Uz8VprEHg","1bFO1AvankQ","lILV7h_y1lA",
+    "9uncX_G-8PY","k2UQZpPoZz8","EdCe2U_Hp4k","MS-9mioT0w8","2O61m_nBdlU","YBIZBwLoG2g",
+    "jUs1mwoZ-UA","fjqyKXOf3WA","RS7ne_vp-lw","c3tU5WtiDH0"
+];
 
-        function onYouTubeIframeAPIReady() {
-            videos.forEach((id, index) => {
-                const div = document.createElement("div");
-                div.className = "thumb";
-                div.id = `player-${index}`;
-                grid.appendChild(div);
+const grid = document.getElementById("grid");
+const players = [];
 
-                const player = new YT.Player(div.id, {
-                    videoId: id,
-                    playerVars: {
-                        rel: 0,
-                        enablejsapi: 1,
-                        controls: 1
-                    },
-                    events: {
-                        'onStateChange': onPlayerStateChange
-                    }
-                });
+function onYouTubeIframeAPIReady() {
+    videos.forEach((id, index) => {
+        const div = document.createElement("div");
+        div.className = "thumb";
+        div.id = `player-${index}`;
+        grid.appendChild(div);
 
-                players.push(player);
-            });
-        }
+        const player = new YT.Player(div.id, {
+            videoId: id,
+            playerVars: { rel: 0, enablejsapi: 1, controls: 1 },
+            events: { 'onStateChange': onPlayerStateChange }
+        });
 
-        // Stop all other videos when one plays
-        function onPlayerStateChange(event) {
-            if (event.data === YT.PlayerState.PLAYING) {
-                players.forEach(p => {
-                    if (p !== event.target && p.getPlayerState() === YT.PlayerState.PLAYING) {
-                        p.pauseVideo();
-                    }
-                });
+        players.push(player);
+    });
+}
+
+function onPlayerStateChange(event) {
+    if (event.data === YT.PlayerState.PLAYING) {
+        players.forEach(p => {
+            if (p !== event.target && p.getPlayerState() === YT.PlayerState.PLAYING) {
+                p.pauseVideo();
             }
-        }
-    </script>
+        });
+    }
+}
+</script>
 
-    <br>
-    <audio controls autoplay>
-        <source src="AUDIO_9800.mp3" type="audio/mpeg">
-        <br><br>
-        Your browser does not support the audio element.
-    </audio>
+<br>
+<audio controls autoplay>
+    <source src="AUDIO_9800.mp3" type="audio/mpeg">
     <br><br>
-    <footer>© 2026 STEVEN JULIEN</footer>
-    <br>
-    <script src="808.js"></script>
+    Your browser does not support the audio element.
+</audio>
+<br><br>
+<footer>© 2026 STEVEN JULIEN</footer>
+<br>
+<script src="808.js"></script>
 </body>
 </html>
