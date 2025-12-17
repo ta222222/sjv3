@@ -213,16 +213,14 @@
 			     <p><a href="mailto:tal@klsbookings.com">→ <b>Bookings</b> ←</a></p>
 
 		<br>
-
+		
 <div id="player"></div>
 
 <div class="grid" id="grid"></div>
 
 <script src="https://www.youtube.com/iframe_api"></script>
-
 <script>
 let player;
-
 const videos = [
   "EdCe2U_Hp4k","MS-9mioT0w8","kRWyp5kgavg","2O61m_nBdlU",
   "YBIZBwLoG2g","lILV7h_y1lA","1bFO1AvankQ","A9Uz8VprEHg",
@@ -231,14 +229,7 @@ const videos = [
 ];
 
 function onYouTubeIframeAPIReady() {
-  player = new YT.Player('player', {
-    videoId: videos[0],
-    playerVars: {
-      autoplay: 0,
-      controls: 1,
-      rel: 0
-    }
-  });
+  // Do nothing here; we will create the player on click
 }
 
 const grid = document.getElementById("grid");
@@ -247,7 +238,20 @@ videos.forEach(id => {
   const d = document.createElement("div");
   d.className = "thumb";
   d.innerHTML = `<img src="https://img.youtube.com/vi/${id}/hqdefault.jpg">`;
-  d.onclick = () => player.loadVideoById(id);
+  d.onclick = () => {
+    if (!player) {
+      player = new YT.Player('player', {
+        videoId: id,
+        playerVars: {
+          autoplay: 1,
+          controls: 1,
+          rel: 0
+        }
+      });
+    } else {
+      player.loadVideoById(id);
+    }
+  };
   grid.appendChild(d);
 });
 </script>
