@@ -112,11 +112,17 @@
         }
     }
 
-    /* Mobile */
+    /* Mobile view - half width & height videos for iPhone-style screens */
     @media (max-width: 768px) {
         .grid {
             grid-template-columns: 1fr;
-            gap: 36px;
+            gap: 24px;
+        }
+
+        .thumb {
+            width: 50vw;                     /* 50% of viewport width */
+            height: calc(50vw * 9 / 16);     /* maintain 16:9 aspect ratio */
+            margin: 0 auto;                  /* center videos */
         }
     }
 </style>
