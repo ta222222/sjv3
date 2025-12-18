@@ -3,64 +3,108 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="title" content="steven julien">
+<meta property="og:title" content="stevenjulien.com">
 <title>steven julien</title>
 
 <style>
 body {
-    font-family: Helvetica, sans-serif;
-    background: #000;
+    font-family: 'Helvetica Light', sans-serif;
+    background-color: #000;
+    font-size: 0.75rem;
+    line-height: 1rem;
     color: #fff;
-    margin: 0;
     text-align: center;
-    font-size: 0.8rem;
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: "Futura Condensed Extra Bold";
+    src: url("https://db.onlinewebfonts.com/t/35e76f5f0525b62c69ebade19a3ee8f4.woff2") format("woff2");
 }
 
 a { color: #fff; text-decoration: none; }
 
-/* ---------- HEADER ---------- */
 .headertext {
+    font-family: "Futura Condensed Extra Bold", Arial, sans-serif;
     font-size: 3rem;
-    margin: 1rem 0;
+    margin: 1rem 0 0.25rem;
+}
+
+.header-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header-img-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
 }
 
 .header-img {
     width: 70%;
-    max-width: 500px;
+    height: auto;
 }
 
-/* ---------- VIDEO GRID ---------- */
-/* SINGLE COLUMN STACK */
+.discography {
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+}
+
+/* -------- VIDEO GRID -------- */
 .grid {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 24px;
-    padding: 16px;
+    grid-template-columns: repeat(2, 1fr); /* 2 per row on mobile */
+    gap: 12px;
+    padding: 12px;
+    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-/* CINEMATIC 16:9 */
+/* 16:9 CINEMATIC WRAPPER */
 .thumb {
     position: relative;
     width: 100%;
-    padding-top: 56.25%; /* exact 16:9 */
+    padding-top: 56.25%; /* 16:9 exact */
     background: #000;
     overflow: hidden;
 }
 
-/* iframe fill */
+/* iframe fills perfectly */
 .thumb iframe {
     position: absolute;
-    inset: 0;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     border: 0;
 }
 
-/* Optional: slightly taller feel on desktop */
+/* Desktop scaling */
 @media (min-width: 900px) {
+    body {
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+    }
+
+    .headertext {
+        font-size: 5rem;
+    }
+
     .grid {
-        gap: 32px;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .grid {
+        grid-template-columns: repeat(4, 1fr);
     }
 }
 </style>
@@ -68,18 +112,61 @@ a { color: #fff; text-decoration: none; }
 
 <body>
 
-<div class="headertext">STEVEN JULIEN</div>
-<img src="IMG_888.jpg" class="header-img" alt="header image">
+<div class="header-section">
+    <div class="headertext">
+        <p>STEVEN JULIEN</p>
+    </div>
+    <div class="header-img-wrapper">
+        <img src="IMG_888.jpg" class="header-img" alt="header image">
+    </div>
+</div>
 
-<br><br>
+<div class="discography">
+    <a href="https://stevenjulien.bandcamp.com/album/time-ep" target="_blank">TIME EP</a><br>
+    <a href="https://stevenjulien.bandcamp.com/album/wraapt" target="_blank">WRAAP'T</a><br>
+    <a href="https://stevenjulien.bandcamp.com/album/crown" target="_blank">CROWN</a><br>
+    <a href="https://stevenjulien.bandcamp.com/album/g-out" target="_blank">G-OUT</a><br>
+    <a href="https://stevenjulien.bandcamp.com/album/8-ball" target="_blank">8 BALL</a><br>
+    <a href="https://stevenjulien.bandcamp.com/album/bloodline" target="_blank">BLOODLINE</a><br>
+    <a href="https://stevenjulien.bandcamp.com/album/fallen" target="_blank">FALLEN</a><br>
+    <a href="https://stevenjulien.bandcamp.com/album/a16" target="_blank">A16</a><br>
+    <a href="https://stevenjulien.bandcamp.com/album/discipline-abyss" target="_blank">DISCIPLINE / ABYSS</a><br>
+    <a href="https://stevenjulien.bandcamp.com/album/st-julien" target="_blank">ST. JULIEN</a><br>
+    <a href="https://stevenjulien.bandcamp.com/album/dreams-of-coke" target="_blank">DREAMS OF COKE</a><br>
+    <a href="https://stevenjulien.bandcamp.com/album/cha-dracula" target="_blank">CHA / DRACULA</a><br>
+    <a href="https://soundcloud.com/platform/b-funkineven-sweets-1">CHIPS & SWEETS</a><br>
+    <a href="https://stevenjulien.bandcamp.com/album/apron-ep" target="_blank">APRON EP</a>
+</div>
 
+<div class="streamlinks">
+    <b>
+        <a href="https://stevenjulien.bandcamp.com/music" target="_blank">Bandcamp |</a>
+        <a href="https://music.apple.com/ca/artist/steven-julien/1125509732" target="_blank">Apple Music |</a>
+        <a href="https://open.spotify.com/artist/37pVxtkN0BLmY6QOliGkJK" target="_blank">Spotify</a>
+    </b>
+</div>
+
+<br>
+
+<div class="dates">
+    <u>UPCOMING DATES</u><br><br>
+    <s>13/12/25: Radio Radio, Amsterdam</s><br>
+    27/12/25: Modular, Fontanafredda Italy<br>
+    31/12/25: Jumbi Peckham, London<br>
+</div>
+
+<p><a href="mailto:tal@klsbookings.com">→ <b>Bookings</b> ←</a></p>
+
+<!-- VIDEO GRID -->
 <div class="grid" id="grid"></div>
 
 <script src="https://www.youtube.com/iframe_api"></script>
 <script>
 const videos = [
     "-R38JqMHK8A","A9Uz8VprEHg","1bFO1AvankQ","lILV7h_y1lA",
-    "9uncX_G-8PY","k2UQZpPoZz8","EdCe2U_Hp4k","MS-9mioT0w8"
+    "9uncX_G-8PY","k2UQZpPoZz8","EdCe2U_Hp4k","MS-9mioT0w8",
+    "2O61m_nBdlU","YBIZBwLoG2g","jUs1mwoZ-UA","fjqyKXOf3WA",
+    "RS7ne_vp-lw","cRLFhzWXF_0","c3tU5WtiDH0","kRWyp5kgavg"
 ];
 
 const grid = document.getElementById("grid");
@@ -118,8 +205,15 @@ function onStateChange(event) {
 }
 </script>
 
+<br>
+
+<audio controls autoplay>
+    <source src="AUDIO_9800.mp3" type="audio/mpeg">
+</audio>
+
 <br><br>
 <footer>© 2026 STEVEN JULIEN</footer>
 
+<script src="808.js"></script>
 </body>
 </html>
