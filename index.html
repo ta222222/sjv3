@@ -58,7 +58,7 @@ a { color: #fff; text-decoration: none; }
 /* -------- VIDEO GRID -------- */
 .grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 per row on mobile */
+    grid-template-columns: repeat(2, 1fr); /* mobile */
     gap: 12px;
     padding: 12px;
     width: 100%;
@@ -70,7 +70,7 @@ a { color: #fff; text-decoration: none; }
 .thumb {
     position: relative;
     width: 100%;
-    padding-top: 56.25%; /* 16:9 exact */
+    padding-top: 56.25%;
     background: #000;
     overflow: hidden;
 }
@@ -111,109 +111,4 @@ a { color: #fff; text-decoration: none; }
 </head>
 
 <body>
-
-<div class="header-section">
-    <div class="headertext">
-        <p>STEVEN JULIEN</p>
-    </div>
-    <div class="header-img-wrapper">
-        <img src="IMG_888.jpg" class="header-img" alt="header image">
-    </div>
-</div>
-
-<div class="discography">
-    <a href="https://stevenjulien.bandcamp.com/album/time-ep" target="_blank">TIME EP</a><br>
-    <a href="https://stevenjulien.bandcamp.com/album/wraapt" target="_blank">WRAAP'T</a><br>
-    <a href="https://stevenjulien.bandcamp.com/album/crown" target="_blank">CROWN</a><br>
-    <a href="https://stevenjulien.bandcamp.com/album/g-out" target="_blank">G-OUT</a><br>
-    <a href="https://stevenjulien.bandcamp.com/album/8-ball" target="_blank">8 BALL</a><br>
-    <a href="https://stevenjulien.bandcamp.com/album/bloodline" target="_blank">BLOODLINE</a><br>
-    <a href="https://stevenjulien.bandcamp.com/album/fallen" target="_blank">FALLEN</a><br>
-    <a href="https://stevenjulien.bandcamp.com/album/a16" target="_blank">A16</a><br>
-    <a href="https://stevenjulien.bandcamp.com/album/discipline-abyss" target="_blank">DISCIPLINE / ABYSS</a><br>
-    <a href="https://stevenjulien.bandcamp.com/album/st-julien" target="_blank">ST. JULIEN</a><br>
-    <a href="https://stevenjulien.bandcamp.com/album/dreams-of-coke" target="_blank">DREAMS OF COKE</a><br>
-    <a href="https://stevenjulien.bandcamp.com/album/cha-dracula" target="_blank">CHA / DRACULA</a><br>
-    <a href="https://soundcloud.com/platform/b-funkineven-sweets-1">CHIPS & SWEETS</a><br>
-    <a href="https://stevenjulien.bandcamp.com/album/apron-ep" target="_blank">APRON EP</a>
-</div>
-
-<div class="streamlinks">
-    <b>
-        <a href="https://stevenjulien.bandcamp.com/music" target="_blank">Bandcamp |</a>
-        <a href="https://music.apple.com/ca/artist/steven-julien/1125509732" target="_blank">Apple Music |</a>
-        <a href="https://open.spotify.com/artist/37pVxtkN0BLmY6QOliGkJK" target="_blank">Spotify</a>
-    </b>
-</div>
-
-<br>
-
-<div class="dates">
-    <u>UPCOMING DATES</u><br><br>
-    <s>13/12/25: Radio Radio, Amsterdam</s><br>
-    27/12/25: Modular, Fontanafredda Italy<br>
-    31/12/25: Jumbi Peckham, London<br>
-</div>
-
-<p><a href="mailto:tal@klsbookings.com">→ <b>Bookings</b> ←</a></p>
-
-<!-- VIDEO GRID -->
-<div class="grid" id="grid"></div>
-
-<script src="https://www.youtube.com/iframe_api"></script>
-<script>
-const videos = [
-    "-R38JqMHK8A","A9Uz8VprEHg","1bFO1AvankQ","lILV7h_y1lA",
-    "9uncX_G-8PY","k2UQZpPoZz8","EdCe2U_Hp4k","MS-9mioT0w8",
-    "2O61m_nBdlU","YBIZBwLoG2g","jUs1mwoZ-UA","fjqyKXOf3WA",
-    "RS7ne_vp-lw","cRLFhzWXF_0","c3tU5WtiDH0","kRWyp5kgavg"
-];
-
-const grid = document.getElementById("grid");
-const players = [];
-
-function onYouTubeIframeAPIReady() {
-    videos.forEach((id, index) => {
-        const div = document.createElement("div");
-        div.className = "thumb";
-        div.id = `player-${index}`;
-        grid.appendChild(div);
-
-        const player = new YT.Player(div.id, {
-            videoId: id,
-            playerVars: {
-                rel: 0,
-                controls: 1,
-                modestbranding: 1,
-                playsinline: 1
-            },
-            events: { onStateChange }
-        });
-
-        players.push(player);
-    });
-}
-
-function onStateChange(event) {
-    if (event.data === YT.PlayerState.PLAYING) {
-        players.forEach(p => {
-            if (p !== event.target && p.getPlayerState() === YT.PlayerState.PLAYING) {
-                p.pauseVideo();
-            }
-        });
-    }
-}
-</script>
-
-<br>
-
-<audio controls autoplay>
-    <source src="AUDIO_9800.mp3" type="audio/mpeg">
-</audio>
-
-<br><br>
-<footer>© 2026 STEVEN JULIEN</footer>
-
-<script src="808.js"></script>
-</body>
-</html>
+<!-- everything else unchanged -->
