@@ -6,6 +6,7 @@
 <meta name="title" content="steven julien">
 <meta property="og:title" content="stevenjulien.com">
 <title>steven julien</title>
+
 <style>
     body {
         font-family: 'Helvetica Light', sans-serif;
@@ -33,7 +34,7 @@
     .headertext {
         font-family: "Futura Condensed Extra Bold", Arial, sans-serif;
         font-size: 3rem;
-        margin: 1rem 0 0.25rem; /* smaller top/bottom spacing */
+        margin: 1rem 0 0.25rem;
     }
 
     .header-section {
@@ -46,81 +47,81 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-bottom: 2rem; /* space to discography on mobile */
+        margin-bottom: 2rem;
     }
 
     .header-img {
         width: 70%;
         height: auto;
-        transition: transform 0.3s ease;
     }
 
     .discography {
         text-transform: uppercase;
-        margin: 0 auto 1.5rem; /* spacing below discography */
+        margin: 0 auto 1.5rem;
     }
 
     @media (min-width: 780px) {
         body { font-size: 1.25rem; line-height: 1.75rem; }
         .headertext { font-size: 5rem; line-height: 1rem; }
-        .header-img {
-            transform: scale(0.75); /* scale to 75% on desktop */
-        }
+        .header-img { transform: scale(0.75); }
         .header-img-wrapper {
             margin-top: -3rem;
-            margin-bottom: 0.5rem; /* smaller gap to discography on desktop */
+            margin-bottom: 0.5rem;
             width: 60%;
-
         }
     }
+
+    /* ==============================
+       CINEMATIC VIDEO GRID
+       ============================== */
 
     .grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: 16px;
-        padding: 16px;
-        max-width: 960px;
+        gap: 24px;
+        padding: 24px;
+        max-width: 1400px;
         margin: auto;
     }
 
     .thumb {
         position: relative;
-        cursor: pointer;
         width: 100%;
         aspect-ratio: 16 / 9;
         background: #000;
+        overflow: hidden;
     }
 
-    .thumb img {
+    .thumb iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
         height: 100%;
-        object-fit: cover;
     }
 
-    .thumb::after {
-        position: absolute;
-        inset: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 60px;
-        background: rgba(0,0,0,.4);
+    /* Large screens = single wide cinematic column */
+    @media (min-width: 1200px) {
+        .grid {
+            grid-template-columns: 1fr;
+        }
+
+        .thumb {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
     }
 
-    /* Mobile adjustments */
+    /* Mobile */
     @media (max-width: 768px) {
         .grid {
             grid-template-columns: 1fr;
             gap: 36px;
         }
-
-        .thumb {
-            width: 100%;
-            margin: 0 auto;
-        }
     }
 </style>
 </head>
+
 <body>
 
 <div class="header-section">
@@ -156,6 +157,7 @@
         <a href="https://open.spotify.com/artist/37pVxtkN0BLmY6QOliGkJK" target="_blank">Spotify</a>
     </b>
 </div>
+
 <br><br>
 
 <div class="dates">
@@ -164,6 +166,7 @@
     27/12/25: Modular, Fontanafredda Italy<br>
     31/12/25: Jumbi Peckham, London<br>
 </div>
+
 <br>
 <p><a href="mailto:tal@klsbookings.com">→ <b>Bookings</b> ←</a></p>
 <br>
@@ -174,8 +177,9 @@
 <script>
 const videos = [
     "-R38JqMHK8A","A9Uz8VprEHg","1bFO1AvankQ","lILV7h_y1lA",
-    "9uncX_G-8PY","k2UQZpPoZz8","EdCe2U_Hp4k","MS-9mioT0w8","2O61m_nBdlU","YBIZBwLoG2g",
-    "jUs1mwoZ-UA","fjqyKXOf3WA","RS7ne_vp-lw","c3tU5WtiDH0"
+    "9uncX_G-8PY","k2UQZpPoZz8","EdCe2U_Hp4k","MS-9mioT0w8",
+    "2O61m_nBdlU","YBIZBwLoG2g","jUs1mwoZ-UA","fjqyKXOf3WA",
+    "RS7ne_vp-lw","c3tU5WtiDH0"
 ];
 
 const grid = document.getElementById("grid");
@@ -190,8 +194,14 @@ function onYouTubeIframeAPIReady() {
 
         const player = new YT.Player(div.id, {
             videoId: id,
-            playerVars: { rel: 0, enablejsapi: 1, controls: 1 },
-            events: { 'onStateChange': onPlayerStateChange }
+            playerVars: {
+                rel: 0,
+                controls: 1,
+                modestbranding: 1
+            },
+            events: {
+                onStateChange: onPlayerStateChange
+            }
         });
 
         players.push(player);
@@ -210,14 +220,16 @@ function onPlayerStateChange(event) {
 </script>
 
 <br>
+
 <audio controls autoplay>
     <source src="AUDIO_9800.mp3" type="audio/mpeg">
-    <br><br>
     Your browser does not support the audio element.
 </audio>
+
 <br><br>
+
 <footer>© 2026 STEVEN JULIEN</footer>
-<br>
+
 <script src="808.js"></script>
 </body>
 </html>
