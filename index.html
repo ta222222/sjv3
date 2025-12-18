@@ -198,17 +198,19 @@ function onYouTubeIframeAPIReady() {
         div.id = `player-${index}`;
         grid.appendChild(div);
 
-        const player = new YT.Player(div.id, {
-            videoId: id,
-            playerVars: {
-                rel: 0,
-                controls: 1,
-                modestbranding: 1
-            },
-            events: {
-                onStateChange: onPlayerStateChange
-            }
-        });
+ const player = new YT.Player(div.id, {
+    videoId: id,
+    playerVars: {
+        rel: 0,                // no related videos at the end
+        controls: 1,           // show minimal controls
+        modestbranding: 1,     // remove YouTube logo
+        showinfo: 0,           // hide video title and uploader (legacy, may be ignored)
+        iv_load_policy: 3      // hide annotations
+    },
+    events: {
+        onStateChange: onPlayerStateChange
+    }
+});
 
         players.push(player);
     });
