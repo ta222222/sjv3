@@ -66,26 +66,35 @@ a { color: #fff; text-decoration: none; }
     margin: 0 auto;
 }
 
+/* 16:9 CINEMATIC WRAPPER */
 .thumb {
     position: relative;
     width: 100%;
-    aspect-ratio: 16 / 9;
+    padding-top: 56.25%; /* 16:9 exact */
     background: #000;
     overflow: hidden;
 }
 
+/* iframe fills perfectly */
 .thumb iframe {
     position: absolute;
-    inset: 0;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     border: 0;
 }
 
-/* Desktop */
+/* Desktop scaling */
 @media (min-width: 900px) {
-    body { font-size: 1.25rem; line-height: 1.75rem; }
-    .headertext { font-size: 5rem; }
+    body {
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+    }
+
+    .headertext {
+        font-size: 5rem;
+    }
 
     .grid {
         grid-template-columns: repeat(3, 1fr);
