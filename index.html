@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="title" content="steven julien">
 <meta property="og:title" content="stevenjulien.com">
-<title>steven julien</title>
+<title>808 PRINCE</title>
 <meta name="description" content="808 PRINCE"/>
 
 <style>
@@ -18,6 +18,11 @@
         text-align: center;
         margin: 0;
         padding: 0;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
     @font-face {
@@ -56,6 +61,21 @@
         height: auto;
     }
 
+    .video-background {
+        width: 75%;
+        height: auto;
+        display: block;
+        margin-top: 3rem;
+    }
+
+    .new-release,
+    .streamlinks,
+    .dates,
+    .discography,
+    body > p {
+        margin-bottom: 1.5rem;
+    }
+
     .discography {
         text-transform: uppercase;
         margin: 0 auto 1.5rem;
@@ -65,6 +85,7 @@
         body { font-size: 1.25rem; line-height: 1.75rem; }
         .headertext { font-size: 5rem; line-height: 1rem; }
         .header-img { transform: scale(0.75); }
+        .video-background { transform: scale(0.75); }
         .header-img-wrapper {
             margin-top: -3rem;
             margin-bottom: 0.5rem;
@@ -72,63 +93,13 @@
         }
     }
 
-    /* ==============================
-       CINEMATIC VIDEO GRID
-       ============================== */
-
-    .grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 24px;
-        padding: 24px;
-        max-width: 1400px;
-        margin: auto;
-    }
-
-    .thumb {
-        position: relative;
-        width: 100%;
-        aspect-ratio: 16 / 9;
-        background: #000;
-        overflow: hidden;
-    }
-
-    .thumb iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    }
-
-    /* Large screens = single wide cinematic column */
-    @media (min-width: 1200px) {
-        .grid {
-            grid-template-columns: 1fr;
-        }
-
-        .thumb {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-    }
-
-    /* Mobile view - half width & height videos for iPhone-style screens */
-    @media (max-width: 768px) {
-        .grid {
-            grid-template-columns: 1fr;
-            gap: 24px;
-        }
-
-        .thumb {
-            width: 75vw;                     /* 75% of viewport width */
-            height: calc(50vw * 9 / 16);     /* maintain 16:9 aspect ratio */
-            margin: 0 auto;                  /* center videos */
-        }
-    }
-
     /* Mobile devices */
 @media only screen and (max-width: 768px) {
+  body {
+    font-size: 0.95rem;
+    line-height: 1.35rem;
+  }
+
   .responsive-img {
     width: 80%; /* scales down to 80% of the screen width */
     max-width: 300px; /* optional: prevent it from getting too big */
@@ -150,49 +121,35 @@ video {
 </head>
 
 <body>
-
+<br>
 <div class="header-section">
     <div class="headertext">
-        <p id="artistName">STEVEN JULIEN</p>
+        <!-- <p id="artistName">808 PRINCE</p> -->
     </div>
     <div class="header-img-wrapper">
-        <img src="IMG_888.jpg" class="header-img" alt="header image">
+        <video id="background-video" autoplay="autoplay" muted="muted" loop playsinline class="video-background">
+            <source src="https://github.com/ta222222/sjv3/raw/refs/heads/808-prince/808%20PRINCE%20V5%20copy.mp4" type="video/mp4">
+        </video>
     </div>
 </div>
 
-<div class="discography">
-    <a href="https://stevenjulien.bandcamp.com/album/time-ep" target="_blank">TIME EP</a><br>
-    <a href="https://stevenjulien.bandcamp.com/album/wraapt" target="_blank">WRAAP'T</a><br>
-    <a href="https://stevenjulien.bandcamp.com/album/crown" target="_blank">CROWN</a><br>
-    <a href="https://stevenjulien.bandcamp.com/album/g-out" target="_blank">G-OUT</a><br>
-    <a href="https://stevenjulien.bandcamp.com/album/8-ball" target="_blank">8 BALL</a><br>
-    <a href="https://stevenjulien.bandcamp.com/album/bloodline" target="_blank">BLOODLINE</a><br>
-    <a href="https://stevenjulien.bandcamp.com/album/fallen" target="_blank">FALLEN</a><br>
-    <a href="https://stevenjulien.bandcamp.com/album/a16" target="_blank">A16</a><br>
-    <a href="https://stevenjulien.bandcamp.com/album/discipline-abyss" target="_blank">DISCIPLINE / ABYSS</a><br>
-    <a href="https://stevenjulien.bandcamp.com/album/st-julien" target="_blank">ST. JULIEN</a><br>
-    <a href="https://stevenjulien.bandcamp.com/album/dreams-of-coke" target="_blank">DREAMS OF COKE</a><br>
-    <a href="https://stevenjulien.bandcamp.com/album/cha-dracula" target="_blank">CHA / DRACULA</a><br>
-    <a href="https://soundcloud.com/platform/b-funkineven-sweets-1">CHIPS & SWEETS</a><br>
-    <a href="https://stevenjulien.bandcamp.com/album/apron-ep" target="_blank">APRON EP</a><br><br>
-</div>
+<div class="new-release"><b>
+    <span style="text-transform:uppercase;"><a href="https://apronrecords.lnk.to/OurSecrets?utm_source=ig&utm_medium=social&utm_content=link_in_bio" target="_blank">Steven Julien - Our Secrets (808 PRINCE Club Mix)</a></span>
+</b></div>
+<br><br>
 
 <div class="streamlinks">
-    <b>
+ 
         <a href="https://stevenjulien.bandcamp.com/music" target="_blank">Bandcamp |</a>
         <a href="https://music.apple.com/ca/artist/steven-julien/1125509732" target="_blank">Apple Music |</a>
         <a href="https://open.spotify.com/artist/37pVxtkN0BLmY6QOliGkJK" target="_blank">Spotify</a>
-    </b>
+  
 </div>
 
 <br><br>
 
 <div class="dates">
     <u>UPCOMING DATES</u><br><br>
-    <s>13/12/25: Radio Radio: Amsterdam</s><br>
-    <a href="https://ra.co/events/2314598" target="_blank"><s>27/12/25: Modular: Fontanafredda, Italy</s></a><br>
-    <a href="https://ra.co/events/2277983" target="_blank"><s>31/12/25: Jumbi: Peckham, London</s></a><br>
-    <a href="https://ra.co/events/2335148" target="_blank"><s>30/01/26: Apophis Club: Milan, Italy</s><br>
     <a href="https://ra.co/events/2331571" target="_blank">03/04/26: 808 Prince Live: The Cause, London<br>
     <a href="https://ra.co/events/2358250" target="_blank">10/04/26: Cadavra: Madrid, Spain<br>
         
@@ -203,85 +160,12 @@ video {
 
     <img src="https://raw.githubusercontent.com/ta222222/sjv3/refs/heads/main/808chrome.gif" alt="808chrome" class="responsive-img">
     
- <!--
-    <div class="video-container">
-<video width="360" controls>
-  <source src="https://www.dropbox.com/scl/fi/fzg7a0ldo7eymn8g41z7b/ULTRAv10.mp4?rlkey=xdb819bujlp374onb4i980rur&e=1&st=rxdnpfsy&raw=1" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-    </div>
-<br>
-    <div class="video-container">
-<video width="360" controls>
-  <source src="https://www.dropbox.com/scl/fi/dq46e9nuf6f5ajo0t5bel/BALLAD.mp4?rlkey=wqg0exb2ztc0q780vuhhku91b&st=xt0lf8q3&raw=1" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-    </div>
-    <br> -->
-    
-    <br><br>
-    
-<div class="grid" id="grid"></div>
 
-<script src="https://www.youtube.com/iframe_api"></script>
-<script>
-const videos =  [
-    "A9Uz8VprEHg","-R38JqMHK8A","cRLFhzWXF_0","1bFO1AvankQ","lILV7h_y1lA",
-    "9uncX_G-8PY","k2UQZpPoZz8","EdCe2U_Hp4k",
-    "2O61m_nBdlU" 
-];
-
-const grid = document.getElementById("grid");
-const players = [];
-
-function onYouTubeIframeAPIReady() {
-    videos.forEach((id, index) => {
-        const div = document.createElement("div");
-        div.className = "thumb";
-        div.id = `player-${index}`;
-        grid.appendChild(div);
-
- const player = new YT.Player(div.id, {
-    videoId: id,
-    playerVars: {
-        rel: 0,                // no related videos at the end
-        controls: 1,           // show minimal controls
-        modestbranding: 1,     // remove YouTube logo
-        showinfo: 0,           // hide video title and uploader (legacy, may be ignored)
-        iv_load_policy: 3      // hide annotations
-    },
-    events: {
-        onStateChange: onPlayerStateChange
-    }
-});
-
-        players.push(player);
-    });
-}
-
-function onPlayerStateChange(event) {
-    if (event.data === YT.PlayerState.PLAYING) {
-        players.forEach(p => {
-            if (p !== event.target && p.getPlayerState() === YT.PlayerState.PLAYING) {
-                p.pauseVideo();
-            }
-        });
-    }
-}
-</script>
 
 <br>
 
-<audio controls autoplay>
-    <source src="AUDIO_9800.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-</audio>
 
-<br><br>
 
-<footer>© 2026 STEVEN JULIEN</footer>
-    <br>
 
-<script src="808.js"></script>
 </body>
 </html>
